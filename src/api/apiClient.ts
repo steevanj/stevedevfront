@@ -1,8 +1,7 @@
-// src/api/apiClient.ts
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:8000", // replace with your backend URL
+  baseURL: "https://happy145.pythonanywhere.com", // deployed backend URL
   headers: {
     "Content-Type": "application/json",
   },
