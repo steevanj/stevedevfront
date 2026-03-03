@@ -149,7 +149,7 @@ const Contact = () => {
           <div className="rounded-xl border border-border bg-card p-6 shadow-card">
             <Mail className="mb-3 h-6 w-6 text-primary" />
             <h3 className="mb-1 font-heading text-sm font-semibold text-foreground">Email</h3>
-            <p className="text-sm text-muted-foreground">john@example.com</p>
+            <p className="text-sm text-muted-foreground">steevan.dev@gmail.com</p>
           </div>
 
           <div className="rounded-xl border border-border bg-card p-6 shadow-card">
