@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "https://happy145.pythonanywhere.com", // deployed backend URL
+  baseURL: "http://13.60.83.201:8000", 
   headers: {
     "Content-Type": "application/json",
   },
