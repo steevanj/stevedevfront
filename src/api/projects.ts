@@ -33,12 +33,12 @@ export interface ProjectResponse {
 }
 
 export const createProject = async (data: ProjectPayload) => {
-  const response = await apiClient.post("/api/profiles/projects/", data);
+  const response = await apiClient.post("/api/profile/projects/", data);
   return response.data;
 };
 
 export const fetchProjects = async (): Promise<ProjectResponse[]> => {
-  const response = await apiClient.get("/api/profiles/projects/");
+  const response = await apiClient.get("/api/profile/projects/");
   const projects = response.data;
 
   // Normalize technologies: if backend returns UUIDs, wrap them as objects

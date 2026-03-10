@@ -38,7 +38,7 @@ const Contact = () => {
     setLoading(true);
     try {
       // Real API call
-      await apiClient.post("/api/profiles/contactmessages/", {
+      await apiClient.post("/api/profile/contactmessages/", {
         ...form,
         is_resolved: false, // optional field
       });

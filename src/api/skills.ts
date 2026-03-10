@@ -16,7 +16,7 @@ export interface SkillResponse {
 
 // Create a new skill
 export const createSkill = async (data: SkillPayload): Promise<SkillResponse> => {
-  const response = await apiClient.post("/api/skills/", data);
+  const response = await apiClient.post("/api/skills/skills/", data);
   return response.data;
 };
 

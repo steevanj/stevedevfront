@@ -77,9 +77,9 @@ const Index = () => {
       try {
         // Fetch profile, projects and experiences in parallel
         const [profileRes, projectsRes, expRes] = await Promise.all([
-          apiClient.get("/api/profiles/profiles/"),
-          apiClient.get("/api/profiles/projects/"),
-          apiClient.get("/api/profiles/experiences/"),
+          apiClient.get("/api/profile/profiles/"),
+          apiClient.get("/api/profile/projects/"),
+          apiClient.get("/api/profile/experiences/"),
         ]);
 
         const profileData = Array.isArray(profileRes.data) ? profileRes.data[0] : profileRes.data;

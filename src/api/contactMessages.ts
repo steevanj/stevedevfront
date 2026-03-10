@@ -10,6 +10,6 @@ export interface ContactMessagePayload {
 }
 
 export const createContactMessage = async (data: ContactMessagePayload) => {
-  const response = await apiClient.post("/api/profiles/contactmessages/", data);
+  const response = await apiClient.post("/api/profile/contactmessages/", data);
   return response.data;
 };

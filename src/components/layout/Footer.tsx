@@ -34,7 +34,7 @@ const Footer = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await apiClient.get("/api/profiles/profiles/");
+        const res = await apiClient.get("/api/profile/profiles/");
         const data = Array.isArray(res.data) ? res.data[0] : res.data;
         setProfile(data || null);
       } catch (error) {

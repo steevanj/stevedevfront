@@ -12,6 +12,6 @@ export interface EducationPayload {
 }
 
 export const createEducation = async (data: EducationPayload) => {
-  const response = await apiClient.post("/api/profiles/education/", data);
+  const response = await apiClient.post("/api/profile/education/", data);
   return response.data;
 };

@@ -13,6 +13,6 @@ export interface ProfilePayload {
 }
 
 export const createProfile = async (data: ProfilePayload) => {
-  const response = await apiClient.post("/api/profiles/profiles/", data);
+  const response = await apiClient.post("/api/profile/profiles/", data);
   return response.data;
 };

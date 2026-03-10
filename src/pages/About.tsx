@@ -144,7 +144,7 @@ const About = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const profileRes = await apiClient.get("/api/profiles/profiles/");
+        const profileRes = await apiClient.get("/api/profile/profiles/");
         const profileData = Array.isArray(profileRes.data) ? profileRes.data[0] : profileRes.data;
         setProfile(profileData || null);
 
@@ -184,10 +184,10 @@ const About = () => {
 
         setSkills(profileSkillIds.size === 0 ? allSkills : matched);
 
-        const expRes = await apiClient.get("/api/profiles/experiences/");
+        const expRes = await apiClient.get("/api/profile/experiences/");
         setExperiences(Array.isArray(expRes.data) ? expRes.data : expRes.data.results || []);
 
-        const eduRes = await apiClient.get("/api/profiles/education/");
+        const eduRes = await apiClient.get("/api/profile/education/");
         setEducation(Array.isArray(eduRes.data) ? eduRes.data : eduRes.data.results || []);
       } catch (error) {
         console.error("Error fetching data:", error);

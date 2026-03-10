@@ -11,6 +11,6 @@ export interface ExperiencePayload {
 }
 
 export const createExperience = async (data: ExperiencePayload) => {
-  const response = await apiClient.post("/api/profiles/experiences/", data);
+  const response = await apiClient.post("/api/profile/experiences/", data);
   return response.data;
 };
