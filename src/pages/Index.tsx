@@ -35,10 +35,8 @@ const Index = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
     const fetchData = async () => {
       try {
-
         const [profileRes, projectsRes] = await Promise.all([
           apiClient.get("/api/profile/profiles/"),
           apiClient.get("/api/profile/projects/")
@@ -64,7 +62,6 @@ const Index = () => {
     };
 
     fetchData();
-
   }, []);
 
   if (loading) return <div className="text-center py-20">Loading...</div>;
@@ -75,7 +72,6 @@ const Index = () => {
   );
 
   const apiLinks = profile.social_links || [];
-
   const mergedMap = new Map();
 
   for (const s of DEFAULT_SOCIALS) {
@@ -97,7 +93,7 @@ const Index = () => {
   return (
     <div>
 
-      {/* Hero Section */}
+      {/* HERO SECTION */}
       <section className="relative overflow-hidden">
 
         <div className="absolute inset-0 bg-gradient-subtle opacity-60" />
@@ -146,7 +142,6 @@ const Index = () => {
                 variants={fadeUp}
                 className="mb-4 flex flex-wrap gap-3"
               >
-
                 <Link to="/projects">
                   <Button size="lg">
                     View Projects
@@ -166,10 +161,9 @@ const Index = () => {
                     </Button>
                   </a>
                 )}
-
               </motion.div>
 
-              {/* Social Links */}
+              {/* SOCIAL LINKS */}
               <motion.div
                 custom={5}
                 initial="hidden"
@@ -177,7 +171,6 @@ const Index = () => {
                 variants={fadeUp}
                 className="mb-6 flex items-center gap-3"
               >
-
                 {socials.map((link) => {
 
                   const platformKey = (link.platform || "").toLowerCase();
@@ -194,9 +187,7 @@ const Index = () => {
                       <Icon className="h-4 w-4" />
                     </a>
                   );
-
                 })}
-
               </motion.div>
 
             </div>
@@ -208,19 +199,14 @@ const Index = () => {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="flex justify-center"
             >
-
               <div className="relative">
-
                 <div className="absolute -inset-4 rounded-2xl bg-gradient-subtle opacity-80" />
-
                 <img
                   src={profileImage}
                   alt={`${profile.full_name}`}
                   className="relative z-10 w-72 rounded-2xl md:w-96"
                 />
-
               </div>
-
             </motion.div>
 
           </div>
@@ -230,13 +216,16 @@ const Index = () => {
       </section>
 
 
-      {/* Skills Carousel */}
-      <SkillsCarousel />
+      {/* SKILLS SECTION */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <SkillsCarousel />
+        </div>
+      </section>
 
 
-      {/* Featured Projects */}
+      {/* FEATURED PROJECTS */}
       {featuredProjects.length > 0 && (
-
         <section className="container mx-auto px-4 py-20">
 
           <h2 className="mb-2 font-heading text-2xl font-bold text-foreground">
@@ -248,14 +237,12 @@ const Index = () => {
           </p>
 
           {featuredProjects.map((project) => (
-
             <div
               key={project.id}
               className="rounded-xl border border-border bg-card p-6 shadow-card md:p-8 mb-6"
             >
 
               <div className="mb-3 flex flex-wrap gap-2">
-
                 {project.tech_stack?.map((tech) => (
                   <span
                     key={tech}
@@ -264,7 +251,6 @@ const Index = () => {
                     {tech}
                   </span>
                 ))}
-
               </div>
 
               <h3 className="mb-2 text-xl font-semibold">
@@ -276,7 +262,6 @@ const Index = () => {
               </p>
 
               <div className="flex gap-3">
-
                 {project.github_url && (
                   <a
                     href={project.github_url}
@@ -296,15 +281,12 @@ const Index = () => {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-
               </div>
 
             </div>
-
           ))}
 
         </section>
-
       )}
 
     </div>
